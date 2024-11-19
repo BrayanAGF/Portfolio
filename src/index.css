@@ -1,0 +1,131 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root{
+scroll-behavior: smooth;
+}
+
+body {
+    @apply bg-slate-100 dark:bg-[#08090A]
+}
+
+.Layout__Container {
+    @apply w-[100dvw] px-[2dvw] sm:w-[80dvw] md:w-[75dvw] md:px-[2dvw] lg:w-[55dvw] 3xl:w-[30dvw] py-[50px] flex flex-col gap-[25px] relative bg-white dark:bg-[#121314] min-h-dvh;
+}
+
+/* .Layout__Container::before{
+    @apply content-[''] fixed w-[100dvw] md:w-[75dvw] lg:w-[55dvw] h-[30px] mx-auto inset-0  bg-gradient-to-t from-transparent to-gray-300 dark:to-[#121314];
+}
+
+.Layout__Container::after{
+    @apply content-[''] fixed w-[100dvw] md:w-[75dvw] lg:w-[55dvw] h-[30px] mx-auto mt-auto inset-0 bg-gradient-to-b from-transparent to-gray-300 dark:to-[#121314];
+} */
+
+.Layout__Navbar {
+    @apply w-[240px] hover:w-[280px] h-[50px] px-[10px] bg-[#FBFBFB] dark:bg-[#121314] dark:border dark:border-[#202122] shadow-lg rounded-3xl text-gray-400 text-[20px] font-[Outfit] font-bold flex items-center gap-2 justify-center fixed inset-0 mt-auto mx-auto mb-[10px] transition-all duration-300 z-10;
+}
+
+.Layout__Button {
+    @apply w-[40px] h-[40px] hover:bg-gray-200 dark:hover:bg-slate-500 transition-colors duration-300 rounded-full grid place-content-center relative hover:after:block;
+    @apply after:content-[attr(name)] after:hidden after:bg-black dark:after:bg-white after:text-white dark:after:text-black after:px-[5px] after:py-[3px] after:rounded-xl after:absolute after:text-[12px] after:top-[-30px] after:left-[50%] after:transform after:-translate-x-[50%];
+
+    svg {
+        @apply w-[20px] h-[20px] text-[#08090A] dark:text-[#FAFAFA];
+    }
+}
+
+
+.Layout__Button:after {
+    animation: fadeIn 0.3s ease-in-out forwards;
+}
+
+.Home__Experiencia-Container {
+    @apply flex justify-between relative hover:bg-slate-200 dark:hover:bg-gray-700 rounded-lg transition-colors duration-300 p-1 px-2;
+
+    &:nth-child(4)>.Home__Experiencia-Body {
+        @apply border-none;
+    }
+}
+
+.Home__Experiencia-Body {
+    @apply flex flex-col sm:flex-row justify-between gap-2 ml-5 pl-[45px] w-full min-h-[50px];
+}
+
+.Home__Experiencia-Img {
+    @apply !w-[50px] !h-[50px] object-cover rounded-[100px] border shadow-sm absolute;
+}
+
+
+.Habilidades__Pill {
+    @apply bg-[#f5f5f5] dark:bg-[#FAFAFA] w-fit text-black inline-block mx-1 dark:text-black text-[10px] font-[Inter] font-bold p-1 rounded-lg;
+}
+
+
+.heart {
+    width: 100px;
+    height: 100px;
+    background: url("https://cssanimation.rocks/images/posts/steps/heart.png") no-repeat;
+    background-position: 0 0;
+    cursor: pointer;
+    transition: background-position 1s steps(28);
+    transition-duration: 0s;
+    transform: scale(0.7);
+}
+
+.heart.is-active {
+    transition-duration: 1s;
+    background-position: -2800px 0;
+}
+
+.Tabs__Label{
+    @apply rounded-lg py-[2px] px-2 font-semibold text-sm transition-colors duration-300 dark:text-[#919191];
+}
+
+.Tabs__Input:checked+.Tabs__Label {
+    @apply  text-[#FAFAFA] dark:text-[#08090A] cursor-default z-10; /* bg-[#08090A] dark:bg-[#FAFAFA] */
+}
+
+.Tabs__Indicator {
+    @apply block w-[52%] rounded-md h-full absolute dark:bg-[#FAFAFA] bg-[#08090A] transition;
+}
+
+.Tabs__Input{
+    @apply hidden;
+}
+
+.Thread__Container {
+    @apply relative;
+}
+
+.Thread__Container:nth-child(2) ~ .Thread__Container > section {
+    @apply border-none;
+}
+
+.Thread__Container:last-of-type > span {
+    @apply hidden;
+}
+
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.ImgPost::view-transition-new(Img-Gameplay) {
+    display: hidden;
+}
+
+@keyframes Animprueba {
+    from {
+        transform: scaleX(100);
+    }
+    to{
+        transform: scale(1);
+    }
+}

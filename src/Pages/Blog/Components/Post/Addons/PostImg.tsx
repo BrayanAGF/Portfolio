@@ -39,22 +39,22 @@ export const PostImg = ({ Img }: PostImgProps) => {
             ) : (
                 <div className="h-[350px]">
                     <div className="bg-black fixed h-dvh w-dvw top-0 left-0 z-30 grid place-content-center">
-                        <div className="flex flex-col gap-4">
+                        <div className="flex flex-col justify-center gap-2">
                             <div className="flex items-center gap-1 z-[45]">
                                 <div>
                                     <img
                                         src="./assets/imgs/Perfil.jpg"
                                         alt="Profile Photo"
-                                        className="w-[60px] h-[60px] object-cover rounded-full border-2 dark:border-[#2D2F39]"
+                                        className="w-[50px] h-[50px] object-cover rounded-full border-2 dark:border-[#2D2F39]"
                                     />
                                 </div>
-                                <h1 className="text-[25px] font-semibold text-white">Brayan Alberto</h1>
+                                <h1 className="text-[23px] font-semibold text-white">Brayan Alberto</h1>
                                 <CheckIcon className="w-[20px] h-[20px]" />
                             </div>
                             <img
                                 src={Img}
                                 alt="Post Image"
-                                className="h-[70dvh] object-contain rounded-lg mx-auto cursor-pointer z-40 ImgPost"
+                                className="md:h-[70dvh] object-contain rounded-lg mx-auto cursor-pointer z-40 ImgPost"
                                 style={{
                                     viewTransitionName,
                                 }}

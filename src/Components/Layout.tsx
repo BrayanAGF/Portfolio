@@ -1,20 +1,15 @@
-import { useState } from "react"
 import { BlogIcon, HomeIcon, LinkedinIcon, MailIcon, MoonIcon, SunIcon } from "./Utilities/Svg"
 import { useNavigation } from "../Hooks/useNavigation"
+import { useTheme } from "../Hooks/useTheme"
 
 export const Layout = ({ children }: { children: React.ReactNode }) => {
 
-  const [Mode, setMode] = useState("Light")
   const { onHandleNavigate } = useNavigation()
 
+  const {theme, setTheme} = useTheme()
+
   const onHandleMode = () => {
-    if (Mode === "Light") {
-      setMode("Dark")
-      document.documentElement.classList.add("dark")
-    } else {
-      setMode("Light")
-      document.documentElement.classList.remove("dark")
-    }
+    setTheme(theme === "dark" ? "light" : "dark")
   }
 
   return (
@@ -33,9 +28,9 @@ export const Layout = ({ children }: { children: React.ReactNode }) => {
           <LinkedinIcon />
         </button>
         <span className="block w-[2px] h-[25px] dark:bg-[#2D2F39] bg-[#E5E7EB] rounded-full" />
-        <button className="Layout__Button" name={Mode === "Light" ? "Oscuro" : "Claro" } onClick={onHandleMode}>
+        <button className="Layout__Button" name={theme === "light" ? "Oscuro" : "Claro" } onClick={onHandleMode}>
           {
-            Mode === "Light" ? <SunIcon /> : <MoonIcon />
+            theme === "light" ? <SunIcon /> : <MoonIcon />
           }
         </button>
       </div>
